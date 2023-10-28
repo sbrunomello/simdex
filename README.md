@@ -1,6 +1,6 @@
 # Simdex
 
-Simdex é a parte do servidor do nosso projeto de simulação de exchange de criptomoedas descentralizada.
+Simdex é a parte do servidor do projeto de simulação de exchange de criptomoedas descentralizada.
 
 ## Configuração
 
