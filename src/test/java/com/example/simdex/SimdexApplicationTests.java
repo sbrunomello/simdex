@@ -1,4 +1,4 @@
-package com.codecraft.simdex;
+package com.example.simdex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -8,7 +8,7 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codecraft</groupId>
+	<groupId>com.example</groupId>
 	<artifactId>simdex</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>simdex</name>
@@ -46,6 +46,17 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

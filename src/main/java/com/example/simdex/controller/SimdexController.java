@@ -1,4 +1,4 @@
-package com.codecraft.simdex.controller;
+package com.example.simdex.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
