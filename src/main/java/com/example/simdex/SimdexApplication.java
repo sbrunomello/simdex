@@ -1,4 +1,4 @@
-package com.codecraft.simdex;
+package com.example.simdex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

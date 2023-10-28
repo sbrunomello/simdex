@@ -1,4 +1,4 @@
-package com.codecraft.simdex.model;
+package com.example.simdex.model;
 
 import lombok.Data;
 
