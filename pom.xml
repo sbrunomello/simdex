@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.codecraft</groupId>
 	<artifactId>simdex</artifactId>
-	<version>1.0.01-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>simdex</name>
-	<description>Plataforma Simulação de Exchange de Criptomoedas Descentralizada - Simdex</description>
+	<description>Plataforma Simulação de Exchange de Criptomoedas Descentralizada</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
