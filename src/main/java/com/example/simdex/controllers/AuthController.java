@@ -4,6 +4,7 @@ import com.example.simdex.domain.user.*;
 import com.example.simdex.repositories.UserRepository;
 import com.example.simdex.security.TokenService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -33,7 +34,7 @@ public class AuthController {
 
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid AuthDTO data) {
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
@@ -43,14 +44,10 @@ public class AuthController {
 
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody @Valid RegisterDTO data) {
+    public ResponseEntity<User> register(@NotNull @RequestBody @Valid RegisterDTO data) {
         if(this.userRepository.findByUsername(data.login()) != null) return ResponseEntity.badRequest().build();
-
         String encryptedPass = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = new User(data.login(), "email", encryptedPass, ERole.ROLE_ADMIN);
-        newUser.setFirstName("adm");
-        newUser.setLastName("adm");
-
+        User newUser = new User(data.login(), data.email(), encryptedPass, data.firstName(), data.lastName(), ERole.ROLE_ADMIN);
         userRepository.save(newUser);
 
         return ResponseEntity.ok().build();
