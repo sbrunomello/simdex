@@ -1,4 +1,4 @@
-package com.example.simdex.controller;
+package com.example.simdex.controllers;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;

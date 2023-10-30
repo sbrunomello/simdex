@@ -1,5 +1,6 @@
-package com.example.simdex.model;
+package com.example.simdex.domain.crypto;
 
+import com.example.simdex.domain.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
