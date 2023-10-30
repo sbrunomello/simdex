@@ -1,4 +1,4 @@
-package com.example.simdex.controller;
+package com.example.simdex.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +10,11 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 
 
-import java.io.IOException;
 import java.io.StringReader;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v2")

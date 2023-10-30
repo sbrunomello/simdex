@@ -1,4 +1,4 @@
-package com.example.simdex.model;
+package com.example.simdex.domain.crypto;
 
 import lombok.Data;
 
