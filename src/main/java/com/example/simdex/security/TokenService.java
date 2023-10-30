@@ -22,30 +22,31 @@ public class TokenService {
     public String generateToken(User user){
         try{
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            return JWT.create()
-                    .withIssuer("auth0")
+            String token = JWT.create()
+                    .withIssuer("auth-api")
                     .withSubject(user.getUsername())
-                    .withExpiresAt(generateExpirationDate())
+                    .withExpiresAt(genExpirationDate())
                     .sign(algorithm);
-        }catch (JWTCreationException e){
-            throw new RuntimeException("error at token generation", e);
+            return token;
+        } catch (JWTCreationException exception) {
+            throw new RuntimeException("Error while generating token", exception);
         }
     }
 
-    private Instant generateExpirationDate(){
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
-    }
-
-    public String validateToken(String token) {
-        try{
+    public String validateToken(String token){
+        try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("auth0")
+                    .withIssuer("auth-api")
                     .build()
                     .verify(token)
                     .getSubject();
-        }catch (JWTVerificationException e){
-            return null;
+        } catch (JWTVerificationException exception){
+            return "";
         }
+    }
+
+    private Instant genExpirationDate(){
+        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 }
